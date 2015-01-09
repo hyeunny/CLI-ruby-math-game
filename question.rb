@@ -5,7 +5,10 @@ class Question
     @first_num = rand(1..20)
     @second_num = rand(1..20)
     @operator = rand(1..3)
+    generate_answer
+  end
 
+  def generate_answer
     case @operator
     when 1
       @answer = @first_num + @second_num
@@ -17,9 +20,9 @@ class Question
       @answer = @first_num * @second_num
       @op_string = '*'
     end
-  end
+  end 
 
-  def to_string
+  def to_s
     "What is #{@first_num} #{@op_string} #{@second_num} ?!?! "
   end
 
@@ -30,6 +33,4 @@ class Question
       return false
     end
   end
-
-
 end
